@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const isDark = theme === 'dark';
       [darkModeToggle, mobileDarkModeToggle].forEach(toggle => {
           if (toggle) {
-              const icon = toggle.querySelector('.toggle-icon');
+              const icon = toggle.querySelector('i');
               const text = toggle.querySelector('.toggle-text');
-              icon.textContent = isDark ? '☀️' : '🌙';
+              icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
               if (text) text.textContent = isDark ? 'Light Mode' : 'Dark Mode';
           }
       });

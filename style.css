@@ -271,11 +271,11 @@ header.scrolled .nav-card {
   font-size: 1.5rem;
 }
 
-.mobile-menu-btn span {
+.mobile-menu-btn i {
   transition: transform 0.3s ease;
 }
 
-.mobile-menu-btn.active span {
+.mobile-menu-btn.active i {
   transform: rotate(90deg);
 }
 
@@ -345,6 +345,7 @@ header.scrolled .nav-card {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* This targets the Dark Mode button inside the mobile menu */
 .mobile-menu-links li .dark-mode-toggle {
   width: 100%;
   text-align: left;
@@ -527,6 +528,7 @@ main {
   box-shadow: 0 35px 100px rgba(0,0,0,0.4);
 }
 
+/* Elements to be animated by IntersectionObserver start with opacity 0 */
 .about-content,
 .service-card,
 .testimonial-card,
@@ -638,10 +640,10 @@ main {
   background: rgba(255, 255, 255, 0.15);
 }
 
-.service-icon {
+.service-card i {
   font-size: 3rem;
+  color: var(--accent-color);
   margin-bottom: 20px;
-  display: inline-block;
 }
 
 .service-card h3 {
@@ -896,6 +898,11 @@ footer {
 .chat-widget:hover {
   transform: scale(1.1);
   box-shadow: 0 15px 40px rgba(68, 87, 253, 0.5);
+}
+
+.chat-widget i {
+  color: white;
+  font-size: 1.5rem;
 }
 
 .chat-popup {
