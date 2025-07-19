@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const isDark = theme === 'dark';
       [darkModeToggle, mobileDarkModeToggle].forEach(toggle => {
           if (toggle) {
-              const icon = toggle.querySelector('i');
+              const icon = toggle.querySelector('.toggle-icon');
               const text = toggle.querySelector('.toggle-text');
-              icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+              icon.textContent = isDark ? '☀️' : '🌙';
               if (text) text.textContent = isDark ? 'Light Mode' : 'Dark Mode';
           }
       });
@@ -96,34 +96,34 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenuPopup.classList.toggle('active');
   });
 
-  // --- Testimonials Carousel ---
-  const testimonialTrack = document.getElementById('testimonialTrack');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  let currentTestimonial = 0;
-  const testimonials = document.querySelectorAll('.testimonial-card');
-  const totalTestimonials = testimonials.length;
+//   // --- Testimonials Carousel ---
+//   const testimonialTrack = document.getElementById('testimonialTrack');
+//   const prevBtn = document.getElementById('prevBtn');
+//   const nextBtn = document.getElementById('nextBtn');
+//   let currentTestimonial = 0;
+//   const testimonials = document.querySelectorAll('.testimonial-card');
+//   const totalTestimonials = testimonials.length;
 
-  const showTestimonial = (index) => {
-    testimonialTrack.style.transform = `translateX(-${index * (100 / totalTestimonials)}%)`;
-    testimonials.forEach((card, i) => card.style.opacity = i === index ? 1 : 0.5);
-  };
+//   const showTestimonial = (index) => {
+//     testimonialTrack.style.transform = `translateX(-${index * (100 / totalTestimonials)}%)`;
+//     testimonials.forEach((card, i) => card.style.opacity = i === index ? 1 : 0.5);
+//   };
   
-  if (totalTestimonials > 0) {
-    // Adjust track width for proper translation
-    testimonialTrack.style.width = `${totalTestimonials * 100}%`;
+//   if (totalTestimonials > 0) {
+//     // Adjust track width for proper translation
+//     testimonialTrack.style.width = `${totalTestimonials * 100}%`;
     
-    nextBtn.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-      showTestimonial(currentTestimonial);
-    });
-    prevBtn.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
-      showTestimonial(currentTestimonial);
-    });
-    setInterval(() => nextBtn.click(), 5000);
-    showTestimonial(0); // Initial call
-  }
+//     nextBtn.addEventListener('click', () => {
+//       currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+//       showTestimonial(currentTestimonial);
+//     });
+//     prevBtn.addEventListener('click', () => {
+//       currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+//       showTestimonial(currentTestimonial);
+//     });
+//     setInterval(() => nextBtn.click(), 5000);
+//     showTestimonial(0); // Initial call
+//   }
   
   // --- Chat Widget ---
   const chatWidget = document.getElementById('chatWidget');

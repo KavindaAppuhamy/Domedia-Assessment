@@ -271,11 +271,11 @@ header.scrolled .nav-card {
   font-size: 1.5rem;
 }
 
-.mobile-menu-btn i {
+.mobile-menu-btn span {
   transition: transform 0.3s ease;
 }
 
-.mobile-menu-btn.active i {
+.mobile-menu-btn.active span {
   transform: rotate(90deg);
 }
 
@@ -345,7 +345,6 @@ header.scrolled .nav-card {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* This targets the Dark Mode button inside the mobile menu */
 .mobile-menu-links li .dark-mode-toggle {
   width: 100%;
   text-align: left;
@@ -528,7 +527,6 @@ main {
   box-shadow: 0 35px 100px rgba(0,0,0,0.4);
 }
 
-/* Elements to be animated by IntersectionObserver start with opacity 0 */
 .about-content,
 .service-card,
 .testimonial-card,
@@ -640,10 +638,10 @@ main {
   background: rgba(255, 255, 255, 0.15);
 }
 
-.service-card i {
+.service-icon {
   font-size: 3rem;
-  color: var(--accent-color);
   margin-bottom: 20px;
+  display: inline-block;
 }
 
 .service-card h3 {
@@ -657,50 +655,63 @@ main {
   line-height: 1.6;
 }
 
-.testimonials-section {
-  padding: 100px 0;
-  text-align: center;
-}
+/* Updated Testimonials Section */
+    .testimonials-section {
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-.testimonials-carousel {
-  position: relative;
-  margin-top: 50px;
-  overflow: hidden;
-}
+    .testimonials-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.testimonial-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      width: 100%;
+      margin-top: 50px;
+    }
 
-.testimonial-card {
-  min-width: 100%;
-  padding: 40px;
-  background: var(--card-bg);
-  backdrop-filter: blur(20px);
-  border-radius: 20px;
-  border: 1px solid var(--glass-border);
-  margin: 0 10px;
-}
+    .testimonial-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid var(--glass-border);
+      transition: all 0.3s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.testimonial-card .stars {
-  color: #ffd700;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
+    .testimonial-card .stars {
+      color: #ffd700;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 5px;
+    }
 
-.testimonial-card p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  color: rgba(255, 255, 255, 0.9);
-  font-style: italic;
-}
+    .testimonial-card p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      font-style: italic;
+      flex-grow: 1;
+    }
 
-.testimonial-card .author {
-  font-weight: 600;
-  color: var(--primary-color);
-}
+    .testimonial-card .author {
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-top: auto;
+    }
 
 .carousel-controls {
   display: flex;
@@ -900,11 +911,6 @@ footer {
   box-shadow: 0 15px 40px rgba(68, 87, 253, 0.5);
 }
 
-.chat-widget i {
-  color: white;
-  font-size: 1.5rem;
-}
-
 .chat-popup {
   position: fixed;
   bottom: 180px;
@@ -1070,7 +1076,22 @@ footer {
   .newsletter-form { flex-direction: column; }
   .chat-popup { width: 90%; right: 5%; }
   .section-title { font-size: 2.5rem; }
+
+  /* Updated Testimonials for Tablet */
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
 }
+
+@media (max-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 2.2rem; }
@@ -1092,4 +1113,12 @@ footer {
   .mobile-menu-popup { top: 80px; right: 20px; width: 260px; }
   .chat-widget { bottom: 80px; right: 20px; width: 50px; height: 50px; }
   .scroll-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+
+  /* Updated Testimonials for Mobile */
+      .testimonials-grid {
+        gap: 15px;
+      }
+      .testimonial-card {
+        padding: 25px 15px;
+      }
 }
