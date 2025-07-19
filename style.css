@@ -518,13 +518,11 @@ main {
   height: auto;
   display: block;
   border-radius: 20px;
-  box-shadow: 0 25px 80px rgba(0,0,0,0.3);
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 .laptop-container img:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 35px 100px rgba(0,0,0,0.4);
 }
 
 .about-content,
