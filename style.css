@@ -611,7 +611,6 @@ main {
 
 .services-section {
   padding: 100px 0;
-
   backdrop-filter: blur(10px);
   margin-top: 0px;
 }
@@ -644,7 +643,7 @@ main {
   height: 150px;
   background-size: cover;
   background-position: center;
-  opacity: 0.8;
+  opacity: 0.6;
   transition: all 0.3s ease;
 }
 
@@ -918,6 +917,13 @@ footer {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  border: 1px solid var(--glass-border);
+}
+
+.social-links a:hover {
+  background: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .social-links a img {
@@ -928,9 +934,8 @@ footer {
 }
 
 .social-links a:hover img {
-  background: var(--primary-color);
-  color: var(--accent-color);
   transform: scale(1.1);
+  filter: brightness(0) saturate(100%) invert(25%) sepia(99%) saturate(2580%) hue-rotate(224deg) brightness(99%) contrast(98%);
 }
 
 .footer-bottom {
