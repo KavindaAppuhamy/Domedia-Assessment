@@ -96,34 +96,111 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenuPopup.classList.toggle('active');
   });
 
-//   // --- Testimonials Carousel ---
-//   const testimonialTrack = document.getElementById('testimonialTrack');
-//   const prevBtn = document.getElementById('prevBtn');
-//   const nextBtn = document.getElementById('nextBtn');
-//   let currentTestimonial = 0;
-//   const testimonials = document.querySelectorAll('.testimonial-card');
-//   const totalTestimonials = testimonials.length;
+// Update the carousel functionality in script.js
+const testimonialTrack = document.getElementById('testimonialTrack');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const mobilePrevBtn = document.getElementById('mobilePrevBtn');
+const mobileNextBtn = document.getElementById('mobileNextBtn');
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const carouselTrackWrapper = document.querySelector('.carousel-track-wrapper');
 
-//   const showTestimonial = (index) => {
-//     testimonialTrack.style.transform = `translateX(-${index * (100 / totalTestimonials)}%)`;
-//     testimonials.forEach((card, i) => card.style.opacity = i === index ? 1 : 0.5);
-//   };
+let currentIndex = 0;
+let cardWidth = 0;
+let visibleCards = 1;
+
+const updateCarousel = () => {
+  visibleCards = getVisibleCards();
   
-//   if (totalTestimonials > 0) {
-//     // Adjust track width for proper translation
-//     testimonialTrack.style.width = `${totalTestimonials * 100}%`;
-    
-//     nextBtn.addEventListener('click', () => {
-//       currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-//       showTestimonial(currentTestimonial);
-//     });
-//     prevBtn.addEventListener('click', () => {
-//       currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
-//       showTestimonial(currentTestimonial);
-//     });
-//     setInterval(() => nextBtn.click(), 5000);
-//     showTestimonial(0); // Initial call
-//   }
+  // Calculate card width based on container width
+  const containerWidth = carouselTrackWrapper.offsetWidth;
+  cardWidth = (containerWidth / visibleCards) - (30 - (30 / visibleCards));
+  
+  // Apply the width to each card for consistent sizing
+  testimonialCards.forEach(card => {
+    card.style.width = `${cardWidth}px`;
+  });
+  
+  // Calculate the total width to move
+  const moveDistance = currentIndex * (cardWidth + 30);
+  testimonialTrack.style.transform = `translateX(-${moveDistance}px)`;
+  
+  // Center the track in mobile view
+  if (window.innerWidth <= 600) {
+    const trackWidth = testimonialTrack.scrollWidth;
+    const wrapperWidth = carouselTrackWrapper.offsetWidth;
+    const offset = (wrapperWidth - cardWidth) / 2;
+    testimonialTrack.style.transform = `translateX(calc(-${moveDistance}px + ${offset}px))`;
+  }
+};
+
+const moveToNext = () => {
+  const maxIndex = testimonialCards.length - visibleCards;
+  if (currentIndex < maxIndex) {
+    currentIndex++;
+    updateCarousel();
+  }
+};
+
+const moveToPrev = () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+};
+
+const getVisibleCards = () => {
+  if (window.innerWidth <= 600) return 1;
+  if (window.innerWidth <= 992) return 2;
+  return 3;
+};
+
+// Event listeners for all buttons
+nextBtn.addEventListener('click', moveToNext);
+prevBtn.addEventListener('click', moveToPrev);
+mobileNextBtn.addEventListener('click', moveToNext);
+mobilePrevBtn.addEventListener('click', moveToPrev);
+
+// Handle window resize
+window.addEventListener('resize', () => {
+  const newVisibleCards = getVisibleCards();
+  const maxIndex = testimonialCards.length - newVisibleCards;
+  
+  // Adjust currentIndex if it would be out of bounds
+  if (currentIndex > maxIndex) {
+    currentIndex = Math.max(0, maxIndex);
+  }
+  
+  updateCarousel();
+});
+
+// Initialize
+updateCarousel();
+
+// Optional: Add touch support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+testimonialTrack.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+testimonialTrack.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+}, false);
+
+function handleSwipe() {
+  const swipeThreshold = 50;
+  if (touchEndX < touchStartX - swipeThreshold) {
+    moveToNext();
+  }
+  if (touchEndX > touchStartX + swipeThreshold) {
+    moveToPrev();
+  }
+}
+
+
   
   // --- Chat Widget ---
   const chatWidget = document.getElementById('chatWidget');
