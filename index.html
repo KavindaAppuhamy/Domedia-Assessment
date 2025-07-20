@@ -1,298 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Best Practice: Always include charset, viewport, and title meta tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DO Media - Best Place on Web</title>
+  
+  <!-- Best Practice: External CSS should be in the head for better rendering performance -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Best Practice: Include favicon for better branding -->
   <link rel="icon" href="assets/site-icon.jpg" type="image/jpg">
+  
+  <!-- Best Practice: Consider adding meta description for SEO -->
 </head>
-<body data-theme="light">
-  <div class="cursor-dot"></div>
-  <div class="cursor-outline"></div>
 
-  <header id="header">
-    <div class="logo">
-      <img src="assets/site-logo.png" alt="DO Media Logo" class="site-logo">
-    </div>
-    <div class="nav-card">
-      <ul class="nav-links">
+  <!-- Best Practice: Use semantic HTML5 elements throughout -->
+  <body data-theme="light">
+    <!-- Best Practice: Custom cursor elements should be non-interactive -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Best Practice: Header should contain site identification and navigation -->
+    <header id="header">
+      <div class="logo">
+        <!-- Best Practice: Always include alt text for images -->
+        <img src="assets/site-logo.png" alt="DO Media Logo" class="site-logo">
+      </div>
+      <div class="nav-card">
+        <!-- Best Practice: Use semantic navigation lists -->
+        <ul class="nav-links">
+          <li><a href="#hero-section">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials-section">Testimonials</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li>
+            <!-- Best Practice: Interactive elements should have clear labels -->
+            <button class="dark-mode-toggle" id="darkModeToggle">
+              <span class="toggle-icon">🌙</span>
+              <span class="toggle-text">Dark Mode</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Best Practice: Mobile menu button should be clearly labeled -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <span class="menu-icon">☰</span>
+    </button>
+
+    <!-- Best Practice: Mobile menu should mirror desktop navigation -->
+    <div class="mobile-menu-popup" id="mobileMenuPopup">
+      <ul class="mobile-menu-links">
         <li><a href="#hero-section">Home</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#testimonials-section">Testimonials</a></li>
         <li><a href="#contact">Contact Us</a></li>
         <li>
-          <button class="dark-mode-toggle" id="darkModeToggle">
+          <button class="dark-mode-toggle" id="mobileDarkModeToggle">
             <span class="toggle-icon">🌙</span>
             <span class="toggle-text">Dark Mode</span>
           </button>
         </li>
       </ul>
     </div>
-  </header>
 
-  <button class="mobile-menu-btn" id="mobileMenuBtn">
-    <span class="menu-icon">☰</span>
-  </button>
+    <!-- Best Practice: Main content should contain the primary content of the page -->
+    <main>
+      <div class="container">
+        <!-- Best Practice: Hero section should be prominent and attention-grabbing -->
+        <section class="hero" id="hero-section">
+          <h1>Don't look anywhere,<br>This is the best place on web</h1>
+          <p>Living in today's metropolitan world of cellular phones, mobile computers and other high-tech gadgets is not just hectic but very</p>
+          <a href="#services" class="cta-button">
+              Get Started
+              <span class="tooltip">No credit card required</span>
+          </a>
+        </section>
+      </div>
+      <div class="laptop-container">
+        <!-- Best Practice: Decorative images should still have alt text -->
+        <img src="assets/laptop.png" alt="A modern laptop showcasing a vibrant screen" />
+      </div>
+    </main>
 
-  <div class="mobile-menu-popup" id="mobileMenuPopup">
-    <ul class="mobile-menu-links">
-      <li><a href="#hero-section">Home</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-      <li>
-        <button class="dark-mode-toggle" id="mobileDarkModeToggle">
-          <span class="toggle-icon">🌙</span>
-          <span class="toggle-text">Dark Mode</span>
-        </button>
-      </li>
-    </ul>
-  </div>
+    <!-- Best Practice: Sections should have clear IDs for navigation -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <!-- Best Practice: Use heading hierarchy properly -->
+        <h2 class="section-title">About Us</h2>
+        <p class="section-subtitle">Learn more about our company and what makes us special</p>
+        <div class="about-content">
+          <div class="about-text">
+            <h2>We Create Digital Experiences</h2>
+            <p>DO Media is a full-service digital agency focused on creating meaningful connections between brands and their audiences through innovative digital solutions.</p>
+            <p>Founded in 2015, we've grown from a small team of passionate designers and developers to a full-fledged digital agency with clients across multiple industries.</p>
+            <p>Our approach combines creative thinking with technical expertise to deliver solutions that not only look great but drive real business results.</p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <h3>8+</h3><p>Years Experience</p>
+              </div>
+              <div class="stat-item">
+                <h3>200+</h3><p>Happy Clients</p>
+              </div>
+              <div class="stat-item">
+                <h3>500+</h3><p>Projects Completed</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="assets/team.jpg" alt="A diverse and collaborative team working in a modern office.">
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <main>
-    <div class="container">
-      <section class="hero" id="hero-section">
-        <h1>Don't look anywhere,<br>This is the best place on web</h1>
-        <p>Living in today's metropolitan world of cellular phones, mobile computers and other high-tech gadgets is not just hectic but very</p>
-        <a href="#services" class="cta-button">
-            Get Started
-            <span class="tooltip">No credit card required</span>
-        </a>
+    <!-- Best Practice: Services section should clearly present offerings -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">We provide cutting-edge solutions for all your digital needs</p>
+        <div class="services-grid">
+          <!-- Best Practice: Service cards should be consistent in structure -->
+          <div class="service-card">
+            <span class="service-icon">💻</span>
+            <h3>Web Development</h3>
+            <p>Creating stunning, responsive websites that engage your audience and drive results.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">📱</span>
+            <h3>Mobile Apps</h3>
+            <p>Building native and cross-platform mobile applications for iOS and Android.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">📈</span>
+            <h3>Digital Marketing</h3>
+            <p>Boosting your online presence with strategic marketing and SEO optimization.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">🎨</span>
+            <h3>UI/UX Design</h3>
+            <p>Crafting beautiful, user-friendly interfaces that enhance user experience.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">☁️</span>
+            <h3>Cloud Solutions</h3>
+            <p>Implementing scalable cloud infrastructure for your business needs.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">🛡️</span>
+            <h3>Cybersecurity</h3>
+            <p>Protecting your digital assets with comprehensive security solutions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Best Practice: Testimonials should be accessible and easy to navigate -->
+  <section class="testimonials-section" id="testimonials-section">
+          <div class="container">
+              <h2 class="section-title">What Our Clients Say</h2>
+              <p class="section-subtitle">Hear from our satisfied clients</p>
+              
+              <div class="testimonials-carousel">
+                  <div class="carousel-wrapper">
+                      <!-- Best Practice: Carousel controls should have proper ARIA labels -->
+                      <button class="carousel-btn" id="prevBtn" aria-label="Previous testimonial">
+                          <span>‹</span>
+                      </button>
+                      
+                      <div class="carousel-track-wrapper">
+                          <div class="carousel-track" id="testimonialTrack">
+                              <!-- Best Practice: Testimonial cards should be consistent -->
+                              <div class="testimonial-card">
+                                  <div class="stars">★★★★★</div>
+                                  <p>"Working with this team was an absolute game-changer for our business. They delivered exactly what we needed and exceeded our expectations."</p>
+                                  <div class="author">- Sarah Johnson, CEO of TechStart</div>
+                              </div>
+                              
+                              <div class="testimonial-card">
+                                  <div class="stars">★★★★★</div>
+                                  <p>"Professional, reliable, and incredibly talented. Our website has never looked better and our conversion rates have tripled!"</p>
+                                  <div class="author">- Mike Chen, Marketing Director</div>
+                              </div>
+                              
+                              <div class="testimonial-card">
+                                  <div class="stars">★★★★★</div>
+                                  <p>"The attention to detail and customer service is unmatched. They made the entire process smooth and stress-free."</p>
+                                  <div class="author">- Emma Rodriguez, Small Business Owner</div>
+                              </div>
+                              
+                              <div class="testimonial-card">
+                                  <div class="stars">★★★★★</div>
+                                  <p>"Outstanding work! They transformed our digital presence and helped us reach new heights in our industry."</p>
+                                  <div class="author">- David Thompson, Entrepreneur</div>
+                              </div>
+                              
+                              <div class="testimonial-card">
+                                  <div class="stars">★★★★★</div>
+                                  <p>"Innovative solutions and exceptional support. Our mobile app is performing beyond our wildest dreams!"</p>
+                                  <div class="author">- Lisa Park, Product Manager</div>
+                              </div>
+                              
+                              <div class="testimonial-card">
+                                  <div class="stars">★★★★★</div>
+                                  <p>"They don't just deliver projects, they deliver results. Our ROI has increased by 250% since working with them."</p>
+                                  <div class="author">- James Wilson, E-commerce Director</div>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <button class="carousel-btn" id="nextBtn" aria-label="Next testimonial">
+                          <span>›</span>
+                      </button>
+                  </div>
+                  
+                  <!-- Best Practice: Mobile controls should mirror desktop functionality -->
+                  <div class="carousel-buttons-mobile">
+                      <button class="carousel-btn" id="mobilePrevBtn" aria-label="Previous testimonial">
+                          <span>‹</span>
+                      </button>
+                      <button class="carousel-btn" id="mobileNextBtn" aria-label="Next testimonial">
+                          <span>›</span>
+                      </button>
+                  </div>
+              </div>
+          </div>
       </section>
-    </div>
-    <div class="laptop-container">
-      <img src="assets/laptop.png" alt="A modern laptop showcasing a vibrant screen" />
-    </div>
-  </main>
 
-  <section class="about-section" id="about">
-    <div class="container">
-      <h2 class="section-title">About Us</h2>
-      <p class="section-subtitle">Learn more about our company and what makes us special</p>
-      <div class="about-content">
-        <div class="about-text">
-          <h2>We Create Digital Experiences</h2>
-          <p>DO Media is a full-service digital agency focused on creating meaningful connections between brands and their audiences through innovative digital solutions.</p>
-          <p>Founded in 2015, we've grown from a small team of passionate designers and developers to a full-fledged digital agency with clients across multiple industries.</p>
-          <p>Our approach combines creative thinking with technical expertise to deliver solutions that not only look great but drive real business results.</p>
-          <div class="about-stats">
-            <div class="stat-item">
-              <h3>8+</h3><p>Years Experience</p>
-            </div>
-            <div class="stat-item">
-              <h3>200+</h3><p>Happy Clients</p>
-            </div>
-            <div class="stat-item">
-              <h3>500+</h3><p>Projects Completed</p>
+    <!-- Best Practice: Newsletter forms should be simple and accessible -->
+    <section class="newsletter-section" id="newsletter">
+      <div class="container">
+        <h2 class="section-title">Stay Updated</h2>
+        <p class="section-subtitle">Subscribe to our newsletter for the latest updates and insights</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <!-- Best Practice: Inputs should have proper type attributes -->
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Best Practice: Footer should contain contact info and secondary navigation -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>DO Media</h3>
+            <p class="footer-description">Your trusted partner for digital excellence. We create innovative solutions that help businesses thrive in the digital age.</p>
+            <div class="social-links">
+              <!-- Best Practice: Social links should open in new tab and have aria-labels -->
+              <a href="https://www.facebook.com/domedia.lk" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/facebook.png" alt="Facebook Icon">
+              </a>
+              <a href="https://twitter.com/domedialk" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/X.png" alt="Twitter Icon">
+              </a>
+              <a href="https://www.linkedin.com/company/domedialk" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/linkedin.png" alt="LinkedIn Icon">
+              </a>
+              <a href="https://www.instagram.com/domedia.lk/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/instagram.png" alt="Instagram Icon">
+              </a>
+              <a href="https://www.youtube.com/channel/UCI3hHrNQXNLNMwAZdSwPksA/" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/youtube.png" alt="YouTube Icon">
+              </a>
             </div>
           </div>
-        </div>
-        <div class="about-image">
-          <img src="assets/team.jpg" alt="A diverse and collaborative team working in a modern office.">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="services-section" id="services">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-subtitle">We provide cutting-edge solutions for all your digital needs</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <span class="service-icon">💻</span>
-          <h3>Web Development</h3>
-          <p>Creating stunning, responsive websites that engage your audience and drive results.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">📱</span>
-          <h3>Mobile Apps</h3>
-          <p>Building native and cross-platform mobile applications for iOS and Android.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">📈</span>
-          <h3>Digital Marketing</h3>
-          <p>Boosting your online presence with strategic marketing and SEO optimization.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🎨</span>
-          <h3>UI/UX Design</h3>
-          <p>Crafting beautiful, user-friendly interfaces that enhance user experience.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">☁️</span>
-          <h3>Cloud Solutions</h3>
-          <p>Implementing scalable cloud infrastructure for your business needs.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🛡️</span>
-          <h3>Cybersecurity</h3>
-          <p>Protecting your digital assets with comprehensive security solutions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section class="testimonials-section" id="testimonials">
-  <div class="container">
-    <h2 class="section-title">What Our Customers Say</h2>
-    <p class="section-subtitle">Hear from our satisfied clients</p>
-    
-    <div class="testimonials-carousel">
-      <div class="carousel-wrapper">
-        <button class="carousel-btn prev-btn" id="prevBtn">&#8592;</button>
-        
-        <div class="carousel-track-wrapper">
-          <div class="carousel-track" id="testimonialTrack">
-            <div class="testimonial-card">
-              <div class="stars">★★★★★</div>
-              <p>"DO Media transformed our online presence completely. Their team is professional, creative, and delivers exceptional results every time."</p>
-              <div class="author">- Sarah Johnson, CEO of TechStart</div>
-            </div>
-            <div class="testimonial-card">
-              <div class="stars">★★★★★</div>
-              <p>"Outstanding service and support. They built our e-commerce platform and it's been running flawlessly for over a year now."</p>
-              <div class="author">- Michael Chen, Founder of ShopSmart</div>
-            </div>
-            <div class="testimonial-card">
-              <div class="stars">★★★★★</div>
-              <p>"The mobile app they developed for us has increased our customer engagement by 300%. Highly recommended!"</p>
-              <div class="author">- Emily Rodriguez, Marketing Director</div>
-            </div>
-            <!-- New Cards Start -->
-            <div class="testimonial-card">
-              <div class="stars">★★★★★</div>
-              <p>"We hired DO Media for a complete branding overhaul. They nailed it with creativity and precision."</p>
-              <div class="author">- Rachel Lee, Creative Director</div>
-            </div>
-            <div class="testimonial-card">
-              <div class="stars">★★★★★</div>
-              <p>"Their cloud migration service saved us weeks of work and the system is now more stable than ever."</p>
-              <div class="author">- Arjun Patel, CTO at CloudSync</div>
-            </div>
-            <div class="testimonial-card">
-              <div class="stars">★★★★★</div>
-              <p>"We saw a 150% increase in lead generation after DO Media optimized our landing pages. Impressive work!"</p>
-              <div class="author">- Naomi Watts, VP Marketing</div>
-            </div>
-            <div class="testimonial-card">
-              <div class="stars">★★★★★</div>
-              <p>"From consultation to launch, their support has been top-notch. A truly client-focused agency."</p>
-              <div class="author">- Omar Hussein, Product Manager</div>
-            </div>
-            <div class="testimonial-card">
-              <div class="stars">★★★★★</div>
-              <p>"I was impressed with their understanding of both design and technical requirements. A rare combination."</p>
-              <div class="author">- Ana Sousa, Startup Founder</div>
-            </div>
-            <div class="testimonial-card">
-              <div class="stars">★★★★★</div>
-              <p>"They consistently deliver beyond expectations. DO Media is now our go-to for all digital projects."</p>
-              <div class="author">- Liam Walker, Director at BoldTech</div>
-            </div>
-            <!-- New Cards End -->
+          <div class="footer-section">
+            <h3>Services</h3>
+            <a href="#services">Web Development</a>
+            <a href="#services">Mobile Apps</a>
+            <a href="#services">Digital Marketing</a>
+            <a href="#services">UI/UX Design</a>
+          </div>
+          <div class="footer-section">
+            <h3>Company</h3>
+            <a href="#about">About Us</a>
+            <a href="#testimonials-section">Testimonials</a>
+            <a href="#contact">Contact</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="footer-section">
+            <h2>Contact Info</h2>
+            <a href="mailto:info@domedia.com"><span class="contact-icon">✉️</span> info@domedia.com</a>
+            <a href="tel:+15551234567"><span class="contact-icon">📞</span> +94 74 176 2793 </a>
+            <p><span class="contact-icon">📍</span> 821/1/D, Kaduwela Road, <br> Malabe, Colombo, <br> Sri Lanka</p>
           </div>
         </div>
-
-        
-        <button class="carousel-btn next-btn" id="nextBtn">&#8594;</button>
-      </div>
-      
-      <div class="carousel-buttons-mobile">
-        <button class="carousel-btn" id="mobilePrevBtn">&#8592;</button>
-        <button class="carousel-btn" id="mobileNextBtn">&#8594;</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section class="newsletter-section" id="newsletter">
-    <div class="container">
-      <h2 class="section-title">Stay Updated</h2>
-      <p class="section-subtitle">Subscribe to our newsletter for the latest updates and insights</p>
-      <form class="newsletter-form" id="newsletterForm">
-        <input type="email" placeholder="Enter your email address" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </section>
-
-  <footer id="contact">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>DO Media</h3>
-          <p class="footer-description">Your trusted partner for digital excellence. We create innovative solutions that help businesses thrive in the digital age.</p>
-          <div class="social-links">
-            <a href="https://www.facebook.com/domedia.lk" aria-label="Facebook">
-              <img src="assets/icons/facebook.png" alt="Facebook Icon">
-            </a>
-            <a href="https://twitter.com/domedialk" aria-label="Twitter">
-              <img src="assets/icons/X.png" alt="Twitter Icon">
-            </a>
-            <a href="https://www.linkedin.com/company/domedialk" aria-label="LinkedIn">
-              <img src="assets/icons/linkedin.png" alt="LinkedIn Icon">
-            </a>
-            <a href="https://www.instagram.com/domedia.lk/" aria-label="Instagram">
-              <img src="assets/icons/instagram.png" alt="Instagram Icon">
-            </a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>Services</h3>
-          <a href="#services">Web Development</a>
-          <a href="#services">Mobile Apps</a>
-          <a href="#services">Digital Marketing</a>
-          <a href="#services">UI/UX Design</a>
-        </div>
-        <div class="footer-section">
-          <h3>Company</h3>
-          <a href="#about">About Us</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Contact</a>
-          <a href="#">Privacy Policy</a>
-        </div>
-        <div class="footer-section">
-          <h2>Contact Info</h2>
-          <a href="mailto:info@domedia.com"><span class="contact-icon">✉️</span> info@domedia.com</a>
-          <a href="tel:+15551234567"><span class="contact-icon">📞</span> +94 74 176 2793 </a>
-          <p><span class="contact-icon">📍</span> 821/1/D, Kaduwela Road, <br> Malabe, Colombo, <br> Sri Lanka</p>
+        <div class="footer-bottom">
+          <!-- Best Practice: Copyright year should be dynamic (handled in JS) -->
+          <p>&copy; 2014-2024 DO Media All rights reserved.</p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 DO Media. All rights reserved.</p>
+    </footer>
+
+    <!-- Best Practice: Scroll-to-top button should be accessible -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to Top">
+      ↑
+    </button>
+
+    <!-- Best Practice: Chat widget should be clearly interactive -->
+    <div class="chat-widget" id="chatWidget" aria-label="Open Chat">
+      💬
+    </div>
+
+    <!-- Best Practice: Chat popup should have proper close functionality -->
+    <div class="chat-popup" id="chatPopup">
+      <div class="chat-header">
+        <h3>Chat with us</h3>
+        <button class="chat-close" id="chatClose" aria-label="Close Chat">&times;</button>
+      </div>
+      <div class="chat-content">
+        <form class="chat-form" id="chatForm">
+          <input type="text" placeholder="Your name" required>
+          <input type="email" placeholder="Your email" required>
+          <textarea placeholder="Your message" rows="4" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
-  </footer>
 
-  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to Top">
-    ↑
-  </button>
+    <!-- Best Practice: Scroll indicator should be non-obtrusive -->
+    <div class="scroll-indicator"></div>
 
-  <div class="chat-widget" id="chatWidget" aria-label="Open Chat">
-    💬
-  </div>
-
-  <div class="chat-popup" id="chatPopup">
-    <div class="chat-header">
-      <h3>Chat with us</h3>
-      <button class="chat-close" id="chatClose" aria-label="Close Chat">&times;</button>
-    </div>
-    <div class="chat-content">
-      <form class="chat-form" id="chatForm">
-        <input type="text" placeholder="Your name" required>
-        <input type="email" placeholder="Your email" required>
-        <textarea placeholder="Your message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </div>
-
-  <div class="scroll-indicator"></div>
-
-  <script src="script.js"></script>
-</body>
+    <!-- Best Practice: JavaScript should be loaded at the end of body -->
+    <script src="script.js"></script>
+  </body>
 </html>
