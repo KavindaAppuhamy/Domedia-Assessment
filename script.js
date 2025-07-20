@@ -127,10 +127,7 @@ const updateCarousel = () => {
   
   // Center the track in mobile view
   if (window.innerWidth <= 600) {
-    const trackWidth = testimonialTrack.scrollWidth;
-    const wrapperWidth = carouselTrackWrapper.offsetWidth;
-    const offset = (wrapperWidth - cardWidth) / 2;
-    testimonialTrack.style.transform = `translateX(calc(-${moveDistance}px + ${offset}px))`;
+    testimonialTrack.style.transform = `translateX(-${moveDistance}px)`;
   }
 };
 
@@ -183,12 +180,12 @@ let touchEndX = 0;
 
 testimonialTrack.addEventListener('touchstart', (e) => {
   touchStartX = e.changedTouches[0].screenX;
-}, false);
+}, {passive: true});
 
 testimonialTrack.addEventListener('touchend', (e) => {
   touchEndX = e.changedTouches[0].screenX;
   handleSwipe();
-}, false);
+}, {passive: true});
 
 function handleSwipe() {
   const swipeThreshold = 50;
